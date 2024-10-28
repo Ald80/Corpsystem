@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from loja.views import (ClienteViewSet, ProdutoViewSet, GrupoViewSet, VendedorViewSet,
-                        VendaViewSet, ItemVendaViewSet)
+                        VendaViewSet, ItemVendaViewSet, StatusPedidoViewSet)
 from loja.views_report.relatorio_excel import RelatorioExcelView
 from loja.views_report.relatorio_pdf import RelatorioPdfView
 
@@ -12,6 +12,7 @@ router.register(r'grupo', GrupoViewSet)
 router.register(r'vendedor', VendedorViewSet)
 router.register(r'venda', VendaViewSet)
 router.register(r'item-venda', ItemVendaViewSet)
+router.register(r'status-pedido', StatusPedidoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
