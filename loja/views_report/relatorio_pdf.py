@@ -34,7 +34,7 @@ class RelatorioPdfView(APIView):
         filename = 'relatorio.pdf'
         table.setStyle(style)
         table.wrapOn(pdf, 0, 0)
-        table.drawOn(pdf, 30, 700)
+        table.drawOn(pdf, 15, 500)
         pdf.showPage()
         pdf.save()
         buffer.seek(0)
