@@ -204,3 +204,9 @@ INSERT INTO loja_venda (data_pedido,cliente_id,vendedor_id) VALUES
 	 ('2024-02-02',5,3),
 	 ('2024-02-02',2,5);
 ```
+
+- Para rodar os testes unitários, execute o comando:
+
+```
+ python manage.py test
+```
