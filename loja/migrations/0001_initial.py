@@ -8,14 +8,17 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
             name='Cliente',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
                 ('endereco', models.CharField(max_length=100)),
                 ('email', models.EmailField(max_length=50)),
@@ -25,44 +28,76 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Grupo',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('descricao', models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='Vendedor',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='Produto',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
                 ('preco', models.DecimalField(decimal_places=2, max_digits=12)),
-                ('grupo', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loja.grupo')),
+                ('grupo',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='loja.grupo')),
             ],
         ),
         migrations.CreateModel(
             name='Venda',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('data_pedido', models.DateField()),
                 ('status_pedido', models.CharField(max_length=50)),
-                ('cliente', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loja.cliente')),
+                ('cliente',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='loja.cliente')),
             ],
         ),
         migrations.CreateModel(
             name='ItemVenda',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('quantidade_vendida', models.IntegerField()),
-                ('cliente', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loja.cliente')),
-                ('produto', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loja.produto')),
-                ('venda', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loja.venda')),
-                ('vendedor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loja.vendedor')),
+                ('cliente',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='loja.cliente')),
+                ('produto',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='loja.produto')),
+                ('venda',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='loja.venda')),
+                ('vendedor',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='loja.vendedor')),
             ],
         ),
     ]

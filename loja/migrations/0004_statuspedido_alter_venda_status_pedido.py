@@ -14,13 +14,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StatusPedido',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id',
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('descricao', models.CharField(max_length=20)),
             ],
         ),
         migrations.AlterField(
             model_name='venda',
             name='status_pedido',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loja.statuspedido'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                    to='loja.statuspedido'),
         ),
     ]

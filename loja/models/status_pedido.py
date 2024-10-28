@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class StatusPedido(models.Model):
     descricao = models.CharField(max_length=20)
 
